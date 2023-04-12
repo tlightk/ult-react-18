@@ -1,11 +1,20 @@
 export default function ListGroup() {
+  const items = ["Item 1", "Item 2", "Item 3"];
+
   return (
-    <ul className="list-group">
-      <li className="list-group-item">Item 1</li>
-      <li className="list-group-item">Item 2</li>
-      <li className="list-group-item">Item 3</li>
-      <li className="list-group-item">Item 4</li>
-      <li className="list-group-item">Item 5</li>
-    </ul>
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        {items.map((item) => (
+          <li
+            className="list-group-item"
+            key={item}
+            onClick={() => console.log("Clicked")}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

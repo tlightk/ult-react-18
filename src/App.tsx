@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/alert";
 import "./App.css";
 
 function App() {
@@ -11,11 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <ListGroup
-        items={items}
-        heading={"Items"}
-        onSelectItem={handleSelectItem}
-      />
+      <Alert>
+        Hello <span>World</span>
+      </Alert>
     </div>
   );
 }

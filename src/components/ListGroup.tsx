@@ -1,12 +1,15 @@
 import { useState } from "react";
+interface Props {
+  items: string[];
+  heading: string;
+}
 
-export default function ListGroup() {
-  let items = ["Item 1", "Item 2", "Item 3"];
+export default function ListGroup({ items, heading }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       <ul className="list-group">
         {items.map((item, index) => (
           <li

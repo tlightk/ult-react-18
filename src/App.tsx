@@ -5,7 +5,7 @@ import Button from "./components/Button";
 import "./App.css";
 
 function App() {
-  let items = ["Item 1", "Item 2", "Item 3"];
+  const [alertVisible, setAlertVisible] = useState(false);
 
   const handleSelectItem = (item: String) => {
     console.log(item);
@@ -13,11 +13,13 @@ function App() {
 
   return (
     <div className="App">
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
-      <Button color="danger" onClick={() => console.log("clicked")}>
-        My Button
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisible(false)}>
+          <p>This is an alert!</p>
+        </Alert>
+      )}
+      <Button color="primary" onClick={() => setAlertVisible(true)}>
+        Show Alert
       </Button>
     </div>
   );

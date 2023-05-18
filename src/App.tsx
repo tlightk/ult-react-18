@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <ListGroup items={["a", "b", "c"]} heading="list" onSelectItem={handleSelectItem} />
       {alertVisible && (
         <Alert onClose={() => setAlertVisible(false)}>
           <p>This is an alert!</p>

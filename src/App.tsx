@@ -3,6 +3,7 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import "./App.css";
+import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div className="App">
+      <BsFillCalendarFill color="red" size="40" />
       <ListGroup items={["a", "b", "c"]} heading="list" onSelectItem={handleSelectItem} />
       {alertVisible && (
         <Alert onClose={() => setAlertVisible(false)}>
